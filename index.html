@@ -10,14 +10,25 @@
 
     <header class="header">
         <a href="#" class="logo">
-        <img src="assets/imageLogo.png" alt="Logo de GlobalAirlines" class="logo-img">
-        <span>GlobalAirlines</span>
+            <img src="assets/imageLogo.png" alt="Logo de GlobalAirlines" class="logo-img">
         </a>
-        
+        <div class="header-form-container">
+                <h2>Recibe ofertas exclusivas</h2>
+                <form action="#" method="POST">
+                    <label for="nombre" class="sr-only">Tu nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    
+                    <label for="correo" class="sr-only">Tu correo</label>
+                    <input type="email" id="correo" name="correo" placeholder="tucorreo@email.com" required>
+                    
+                    <button type="submit" class="btn-cta">Suscribirme</button>
+                </form>
+            </div>
         <section class="hero">
             <h1>Encuentra los mejores vuelos al mejor precio</h1>
             <p>Compara itinerarios y reserva tu próximo viaje en minutos de forma sencilla.</p>
-            <a href="#contacto" class="btn-cta">¡Buscar Vuelos!</a>
+            
+            
         </section>
     </header>
 
@@ -29,19 +40,6 @@
                 <li>📱 Reserva fácil desde tu teléfono.</li>
                 <li>🎯 Soporte y atención 24/7.</li>
             </ul>
-        </section>
-
-        <section id="contacto" class="contact-section">
-            <h2>Recibe ofertas exclusivas</h2>
-            <form action="#" method="POST">
-                <label for="nombre" class="sr-only">Tu nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                
-                <label for="correo" class="sr-only">Tu correo</label>
-                <input type="email" id="correo" name="correo" placeholder="tucorreo@email.com" required>
-                
-                <button type="submit" class="btn-cta">Suscribirme</button>
-            </form>
         </section>
     </main>
 
