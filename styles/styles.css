@@ -54,17 +54,20 @@ body {
 }
 
 .header-form-container {
+    position: absolute;
+    top: 0;
+    align-content: auto;
     background: #ffffff;
-    padding: 24px;
+    padding: 10px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    margin: 20px auto 0 auto;
+    margin-left: auto;
     max-width: 400px;
 }
 
 .header-form-container h2 {
     font-size: 1.2rem;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: #222;
 }
 
