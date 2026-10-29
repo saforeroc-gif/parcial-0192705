@@ -1,49 +1,559 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheap Flights and Simple Itineraries | Global Aviation</title>
-    <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RENTCARS - Find, book and rent a car Easily</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Archivo CSS Personalizado -->
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#1572E8',
+              lightBlue: '#ECF5FF',
+              darkNavy: '#050B20',
+              grayBg: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-white text-slate-800 antialiased">
 
-    <header class="header">
-        <a href="#" class="logo">
-            <img src="assets/imageLogo.png" alt="Logo de GlobalAirlines" class="logo-img">
-        </a>
-        <div class="header-form-container">
-                <h2>Recibe ofertas exclusivas</h2>
-                <form action="#" method="POST">
-                    <label for="nombre" class="sr-only">Tu nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                    
-                    <label for="correo" class="sr-only">Tu correo</label>
-                    <input type="email" id="correo" name="correo" placeholder="tucorreo@email.com" required>
-                    
-                    <button type="submit" class="btn-cta">Suscribirme</button>
-                </form>
+  <!-- NAVBAR -->
+  <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-20">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-brand-blue flex items-center justify-center text-white text-xs font-bold">
+        <i class="fa-solid fa-car-side"></i>
+      </div>
+      <span class="font-extrabold text-xl tracking-tight text-brand-blue">RENTCARS</span>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+      <a href="#" class="hover:text-brand-blue transition">Become a renter</a>
+      <a href="#" class="hover:text-brand-blue transition">Rental deals</a>
+      <a href="#" class="hover:text-brand-blue transition">How it work</a>
+      <a href="#" class="hover:text-brand-blue transition">Why choose us</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a href="#" class="text-sm font-medium text-slate-700 hover:text-brand-blue">Sign in</a>
+      <a href="#" class="bg-brand-blue hover:bg-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm transition">Sign up</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-8 pb-20 overflow-hidden">
+    <!-- Fondo Geométrico Azul Claro -->
+    <div class="absolute top-0 right-0 w-2/3 h-full -z-10 opacity-60 pointer-events-none">
+      <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <path d="M 300 0 L 800 0 L 800 600 L 150 450 Z" fill="#EBF3FE"/>
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
+      <div class="lg:col-span-5 space-y-6 z-10">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+          Find, book and rent a car <span class="text-brand-blue relative inline-block">Easily
+            <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 138 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7C38 2.5 100 2.5 136 7" stroke="#1572E8" stroke-width="4" stroke-linecap="round"/></svg>
+          </span>
+        </h1>
+        <p class="text-slate-500 text-base max-w-md">
+          Get a car wherever and whenever you need it with your iOS and Android device.
+        </p>
+
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#" class="bg-black text-white px-4 py-2.5 rounded-xl flex items-center gap-3 hover:opacity-90 transition">
+            <i class="fa-brands fa-google-play text-2xl"></i>
+            <div class="text-left leading-tight">
+              <span class="text-[10px] uppercase block tracking-wider text-gray-300">GET IT ON</span>
+              <span class="text-sm font-semibold block">Google Play</span>
             </div>
-        <section class="hero">
-            <h1>Encuentra los mejores vuelos al mejor precio</h1>
-            <p>Compara itinerarios y reserva tu próximo viaje en minutos de forma sencilla.</p>
-        </section>
-    </header>
+          </a>
+          <a href="#" class="bg-black text-white px-4 py-2.5 rounded-xl flex items-center gap-3 hover:opacity-90 transition">
+            <i class="fa-brands fa-apple text-2xl"></i>
+            <div class="text-left leading-tight">
+              <span class="text-[10px] block tracking-wider text-gray-300">Download on the</span>
+              <span class="text-sm font-semibold block">App Store</span>
+            </div>
+          </a>
+        </div>
+      </div>
 
-    <main>
-        <section class="benefits">
-            <h2>¿Por qué elegirnos?</h2>
-            <ul>
-                <li>⚡ Precios transparentes sin cargos ocultos.</li>
-                <li>📱 Reserva fácil desde tu teléfono.</li>
-                <li>🎯 Soporte y atención 24/7.</li>
-            </ul>
-        </section>
-    </main>
+      <div class="lg:col-span-7 relative flex justify-center z-10">
+        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Blue Porsche" class="w-full max-w-xl object-contain drop-shadow-2xl">
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2026 GlobalAviation. Todo esto no es mi propiedad. Creditos a la pagina oficial.</p>
-    </footer>
+    <!-- Buscador -->
+    <div class="max-w-5xl mx-auto px-6 mt-8 relative z-20">
+      <div class="bg-white rounded-2xl custom-shadow p-4 sm:p-5 grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+        <div class="flex items-center gap-3 px-3 py-2 border-r border-gray-100">
+          <div class="text-gray-400 text-xl"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-800">Location</label>
+            <input type="text" placeholder="Search your location" class="w-full text-xs text-slate-500 focus:outline-none">
+          </div>
+        </div>
+        <div class="flex items-center gap-3 px-3 py-2 border-r border-gray-100">
+          <div class="text-gray-400 text-xl"><i class="fa-regular fa-calendar-days"></i></div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-800">Pickup date</label>
+            <span class="text-xs text-slate-500">Tue 15 Feb, 09:00</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 px-3 py-2">
+          <div class="text-gray-400 text-xl"><i class="fa-regular fa-calendar-days"></i></div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-800">Return date</label>
+            <span class="text-xs text-slate-500">Thu 16 Feb, 11:00</span>
+          </div>
+        </div>
+        <div>
+          <button class="w-full bg-brand-blue hover:bg-blue-600 text-white font-medium py-3 rounded-xl shadow-md transition text-sm">
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-16 text-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="bg-brand-lightBlue text-brand-blue text-xs font-semibold uppercase px-4 py-1.5 rounded-md tracking-wider">
+        HOW IT WORK
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-12">
+        Rent with following 3 working steps
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 bg-brand-lightBlue text-brand-blue rounded-2xl flex items-center justify-center text-2xl mb-5 shadow-sm">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Choose location</h3>
+          <p class="text-slate-500 text-xs leading-relaxed max-w-xs">Choose your and find your best car</p>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 bg-brand-lightBlue text-brand-blue rounded-2xl flex items-center justify-center text-2xl mb-5 shadow-sm">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Pick-up date</h3>
+          <p class="text-slate-500 text-xs leading-relaxed max-w-xs">Select your pick up date and time to book your car</p>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 bg-brand-lightBlue text-brand-blue rounded-2xl flex items-center justify-center text-2xl mb-5 shadow-sm">
+            <i class="fa-solid fa-car"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Book your car</h3>
+          <p class="text-slate-500 text-xs leading-relaxed max-w-xs">Book your car and we will deliver it directly to you</p>
+        </div>
+      </div>
+
+      <!-- Marcas -->
+      <div class="mt-16 pt-8 border-t border-slate-100 flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60 text-slate-700 font-bold tracking-widest text-lg">
+        <span>HONDA</span>
+        <span>JAGUAR</span>
+        <span>NISSAN</span>
+        <span>VOLVO</span>
+        <span>AUDI</span>
+        <span>ACURA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="py-16 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-1/2 h-full -z-10 opacity-50 pointer-events-none">
+      <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <path d="M 0 100 L 450 300 L 0 550 Z" fill="#EBF3FE"/>
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 relative flex justify-center">
+        <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1000&q=80" alt="Silver Audi R8" class="w-full max-w-lg object-contain drop-shadow-xl">
+      </div>
+
+      <div class="lg:col-span-6 space-y-6">
+        <span class="bg-brand-lightBlue text-brand-blue text-xs font-semibold uppercase px-4 py-1.5 rounded-md tracking-wider inline-block">
+          WHY CHOOSE US
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-snug">
+          We offer the best experience with our rental deals
+        </h2>
+
+        <div class="space-y-5 pt-2">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-brand-lightBlue text-brand-blue rounded-xl flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-wallet"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Best price guaranteed</h4>
+              <p class="text-slate-500 text-xs mt-1">Find a lower price? We'll refund you 100% of the difference.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-brand-lightBlue text-brand-blue rounded-xl flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Experience driver</h4>
+              <p class="text-slate-500 text-xs mt-1">Don't have driver? Don't worry, we have many experienced driver for you.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-brand-lightBlue text-brand-blue rounded-xl flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">24 hour car delivery</h4>
+              <p class="text-slate-500 text-xs mt-1">Book your car anytime and we will deliver it directly to you.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-brand-lightBlue text-brand-blue rounded-xl flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">24/7 technical support</h4>
+              <p class="text-slate-500 text-xs mt-1">Have a question? Contact Rentcars support any time when you have problem.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR RENTAL DEALS -->
+  <section class="py-16 text-center bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="bg-brand-lightBlue text-brand-blue text-xs font-semibold uppercase px-4 py-1.5 rounded-md tracking-wider">
+        POPULAR RENTAL DEALS
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-12">
+        Most popular cars rental deals
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl card-shadow p-5 flex flex-col text-left">
+          <div class="h-36 flex items-center justify-center mb-4">
+            <img src="https://images.unsplash.com/photo-1541348263662-e082662d82da?auto=format&fit=crop&w=500&q=80" alt="Jaguar XE" class="max-h-full object-contain">
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Jaguar XE L P250</h3>
+          <div class="flex items-center gap-1 text-xs text-slate-500 mt-1 mb-4">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <span class="font-semibold text-slate-800">4.8</span>
+            <span>(2,436 reviews)</span>
+          </div>
+          <div class="grid grid-cols-2 gap-y-2 text-xs text-slate-500 border-t border-b border-slate-100 py-3 mb-4">
+            <span><i class="fa-regular fa-user mr-1"></i> 4 Passengers</span>
+            <span><i class="fa-solid fa-gear mr-1"></i> Auto</span>
+            <span><i class="fa-regular fa-snowflake mr-1"></i> Air Conditioning</span>
+            <span><i class="fa-solid fa-door-closed mr-1"></i> 4 Doors</span>
+          </div>
+          <div class="mt-auto flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Price</span>
+              <span class="font-extrabold text-slate-900 text-lg">$1,800 <span class="text-xs font-normal text-slate-500">/day</span></span>
+            </div>
+          </div>
+          <button class="w-full bg-brand-blue hover:bg-blue-600 text-white font-medium text-xs py-2.5 rounded-xl mt-4 flex items-center justify-center gap-2 transition">
+            Rent Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl card-shadow p-5 flex flex-col text-left">
+          <div class="h-36 flex items-center justify-center mb-4">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=500&q=80" alt="Audi R8" class="max-h-full object-contain">
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Audi R8</h3>
+          <div class="flex items-center gap-1 text-xs text-slate-500 mt-1 mb-4">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <span class="font-semibold text-slate-800">4.6</span>
+            <span>(1,936 reviews)</span>
+          </div>
+          <div class="grid grid-cols-2 gap-y-2 text-xs text-slate-500 border-t border-b border-slate-100 py-3 mb-4">
+            <span><i class="fa-regular fa-user mr-1"></i> 2 Passengers</span>
+            <span><i class="fa-solid fa-gear mr-1"></i> Auto</span>
+            <span><i class="fa-regular fa-snowflake mr-1"></i> Air Conditioning</span>
+            <span><i class="fa-solid fa-door-closed mr-1"></i> 2 Doors</span>
+          </div>
+          <div class="mt-auto flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Price</span>
+              <span class="font-extrabold text-slate-900 text-lg">$2,100 <span class="text-xs font-normal text-slate-500">/day</span></span>
+            </div>
+          </div>
+          <button class="w-full bg-brand-blue hover:bg-blue-600 text-white font-medium text-xs py-2.5 rounded-xl mt-4 flex items-center justify-center gap-2 transition">
+            Rent Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl card-shadow p-5 flex flex-col text-left">
+          <div class="h-36 flex items-center justify-center mb-4">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=500&q=80" alt="BMW M3" class="max-h-full object-contain">
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">BMW M3</h3>
+          <div class="flex items-center gap-1 text-xs text-slate-500 mt-1 mb-4">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <span class="font-semibold text-slate-800">4.5</span>
+            <span>(2,036 reviews)</span>
+          </div>
+          <div class="grid grid-cols-2 gap-y-2 text-xs text-slate-500 border-t border-b border-slate-100 py-3 mb-4">
+            <span><i class="fa-regular fa-user mr-1"></i> 4 Passengers</span>
+            <span><i class="fa-solid fa-gear mr-1"></i> Auto</span>
+            <span><i class="fa-regular fa-snowflake mr-1"></i> Air Conditioning</span>
+            <span><i class="fa-solid fa-door-closed mr-1"></i> 4 Doors</span>
+          </div>
+          <div class="mt-auto flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Price</span>
+              <span class="font-extrabold text-slate-900 text-lg">$1,600 <span class="text-xs font-normal text-slate-500">/day</span></span>
+            </div>
+          </div>
+          <button class="w-full bg-brand-blue hover:bg-blue-600 text-white font-medium text-xs py-2.5 rounded-xl mt-4 flex items-center justify-center gap-2 transition">
+            Rent Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl card-shadow p-5 flex flex-col text-left">
+          <div class="h-36 flex items-center justify-center mb-4">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=500&q=80" alt="Lamborghini Huracan" class="max-h-full object-contain">
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Lamborghini Huracan</h3>
+          <div class="flex items-center gap-1 text-xs text-slate-500 mt-1 mb-4">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <span class="font-semibold text-slate-800">4.3</span>
+            <span>(2,238 reviews)</span>
+          </div>
+          <div class="grid grid-cols-2 gap-y-2 text-xs text-slate-500 border-t border-b border-slate-100 py-3 mb-4">
+            <span><i class="fa-regular fa-user mr-1"></i> 2 Passengers</span>
+            <span><i class="fa-solid fa-gear mr-1"></i> Auto</span>
+            <span><i class="fa-regular fa-snowflake mr-1"></i> Air Conditioning</span>
+            <span><i class="fa-solid fa-door-closed mr-1"></i> 2 Doors</span>
+          </div>
+          <div class="mt-auto flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Price</span>
+              <span class="font-extrabold text-slate-900 text-lg">$2,300 <span class="text-xs font-normal text-slate-500">/day</span></span>
+            </div>
+          </div>
+          <button class="w-full bg-brand-blue hover:bg-blue-600 text-white font-medium text-xs py-2.5 rounded-xl mt-4 flex items-center justify-center gap-2 transition">
+            Rent Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <a href="#" class="inline-flex items-center gap-2 border border-slate-300 hover:border-brand-blue text-slate-700 hover:text-brand-blue font-medium text-xs px-6 py-3 rounded-xl transition bg-white">
+          Show all vehicles <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-16 text-center relative overflow-hidden">
+    <div class="absolute top-10 left-10 text-brand-lightBlue opacity-70 text-9xl font-serif pointer-events-none">“</div>
+    <div class="absolute top-10 right-10 text-brand-lightBlue opacity-70 text-9xl font-serif pointer-events-none">”</div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <span class="bg-brand-lightBlue text-brand-blue text-xs font-semibold uppercase px-4 py-1.5 rounded-md tracking-wider">
+        TESTIMONIALS
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-12">
+        What people say about us?
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl card-shadow p-6 flex flex-col sm:flex-row gap-6 items-center text-left">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Charlie Johnson" class="w-28 h-36 object-cover rounded-xl shrink-0">
+          <div>
+            <div class="text-2xl font-extrabold text-slate-900">5.0 <span class="text-sm font-normal text-slate-500">stars</span></div>
+            <div class="flex text-amber-400 text-xs my-1">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-slate-600 mt-3 mb-4 leading-relaxed italic">
+              "I feel very secure when using caretall's services. Your customer care team is very enthusiastic and the driver is always on time."
+            </p>
+            <h4 class="font-bold text-slate-900 text-sm">Charlie Johnson</h4>
+            <span class="text-xs text-slate-400">From New York, US</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl card-shadow p-6 flex flex-col sm:flex-row gap-6 items-center text-left">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" alt="Jenny Wilson" class="w-28 h-36 object-cover rounded-xl shrink-0">
+          <div>
+            <div class="text-2xl font-extrabold text-slate-900">5.0 <span class="text-sm font-normal text-slate-500">stars</span></div>
+            <div class="flex text-amber-400 text-xs my-1">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-slate-600 mt-3 mb-4 leading-relaxed italic">
+              "Been using your services for years. The car condition is always great, I will definitely keep using your service."
+            </p>
+            <h4 class="font-bold text-slate-900 text-sm">Jenny Wilson</h4>
+            <span class="text-xs text-slate-400">From New York, US</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD APP -->
+  <section class="py-16 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="bg-brand-lightBlue text-brand-blue text-xs font-semibold uppercase px-4 py-1.5 rounded-md tracking-wider">
+          DOWNLOAD
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
+          Download Rentcars<br>App for <span class="text-brand-blue">FREE</span>
+        </h2>
+        <p class="text-slate-500 text-xs sm:text-sm">
+          For faster, easier booking and exclusive deals.
+        </p>
+
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#" class="bg-black text-white px-4 py-2.5 rounded-xl flex items-center gap-3 hover:opacity-90 transition">
+            <i class="fa-brands fa-google-play text-2xl"></i>
+            <div class="text-left leading-tight">
+              <span class="text-[10px] uppercase block tracking-wider text-gray-300">GET IT ON</span>
+              <span class="text-sm font-semibold block">Google Play</span>
+            </div>
+          </a>
+          <a href="#" class="bg-black text-white px-4 py-2.5 rounded-xl flex items-center gap-3 hover:opacity-90 transition">
+            <i class="fa-brands fa-apple text-2xl"></i>
+            <div class="text-left leading-tight">
+              <span class="text-[10px] block tracking-wider text-gray-300">Download on the</span>
+              <span class="text-sm font-semibold block">App Store</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 flex justify-center relative">
+        <div class="w-64 sm:w-72 bg-black rounded-[40px] p-3 shadow-2xl border-4 border-slate-800">
+          <div class="bg-white rounded-[32px] overflow-hidden p-4 relative pt-6 text-center">
+            <div class="w-20 h-4 bg-black rounded-full mx-auto mb-4"></div>
+            <div class="text-xs font-bold text-slate-800 mb-2">10:01</div>
+            
+            <div class="bg-slate-50 rounded-2xl p-3 border border-slate-100 shadow-sm text-left mt-4">
+              <img src="https://images.unsplash.com/photo-1541348263662-e082662d82da?auto=format&fit=crop&w=400&q=80" alt="App Car" class="w-full h-24 object-contain mb-2">
+              <div class="font-bold text-xs text-slate-900">Jaguar XE L P250</div>
+              <div class="text-[10px] text-slate-400">Automatic • Air Conditioning</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-darkNavy text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-8 pb-12 border-b border-slate-800 text-xs">
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-full bg-brand-blue flex items-center justify-center text-white text-xs font-bold">
+            <i class="fa-solid fa-car-side"></i>
+          </div>
+          <span class="font-extrabold text-lg tracking-tight text-white">RENTCARS</span>
+        </div>
+        <div class="space-y-2 text-slate-400">
+          <p><i class="fa-solid fa-location-dot mr-2"></i> 25566 Hc 1, Glenallen, Alaska, 99588, USA</p>
+          <p><i class="fa-solid fa-phone mr-2"></i> +603 4784 273 12</p>
+          <p><i class="fa-solid fa-envelope mr-2"></i> rentcars@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="font-bold text-white text-sm">Our Product</h4>
+        <ul class="space-y-2 text-slate-400">
+          <li><a href="#" class="hover:text-white transition">Career</a></li>
+          <li><a href="#" class="hover:text-white transition">Car</a></li>
+          <li><a href="#" class="hover:text-white transition">Packages</a></li>
+          <li><a href="#" class="hover:text-white transition">Features</a></li>
+          <li><a href="#" class="hover:text-white transition">Priceline</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="font-bold text-white text-sm">Resources</h4>
+        <ul class="space-y-2 text-slate-400">
+          <li><a href="#" class="hover:text-white transition">Download</a></li>
+          <li><a href="#" class="hover:text-white transition">Help Centre</a></li>
+          <li><a href="#" class="hover:text-white transition">Guides</a></li>
+          <li><a href="#" class="hover:text-white transition">Partner Network</a></li>
+          <li><a href="#" class="hover:text-white transition">Cruises</a></li>
+          <li><a href="#" class="hover:text-white transition">Developer</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="font-bold text-white text-sm">About Rentcars</h4>
+        <ul class="space-y-2 text-slate-400">
+          <li><a href="#" class="hover:text-white transition">Why choose us</a></li>
+          <li><a href="#" class="hover:text-white transition">Our Story</a></li>
+          <li><a href="#" class="hover:text-white transition">Investor Relations</a></li>
+          <li><a href="#" class="hover:text-white transition">Press Center</a></li>
+          <li><a href="#" class="hover:text-white transition">Advertise</a></li>
+        </ul>
+
+        <div class="pt-2">
+          <h5 class="font-bold text-white mb-2">Follow Us</h5>
+          <div class="flex items-center gap-3 text-slate-400 text-sm">
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 pt-6 text-center text-slate-500 text-[11px]">
+      Copyright 2023 • Rentcars, All Rights Reserved
+    </div>
+  </footer>
 
 </body>
 </html>
