@@ -1,1451 +1,623 @@
-.landing-page {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
+:root {
+  --primary-blue: #1572D3;
+  --primary-hover: #0f5bb0;
+  --text-dark: #272727;
+  --text-gray: #484848;
+  --bg-light: #FFFFFF;
 }
 
-.landing-page .header {
-  position: relative;
-  width: 1440px;
-  height: 800px;
-  background-color: #ffffff;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.landing-page .frame {
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  overflow-x: hidden; /* Evita scroll horizontal si el auto sobresale */
+}
+
+/* 1. BARRA DE NAVEGACIÓN */
+.navbar {
   display: flex;
-  width: 1120px;
-  align-items: center;
   justify-content: space-between;
-  position: absolute;
-  top: 40px;
-  left: 160px;
-}
-
-.landing-page .div {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  position: relative;
-  flex: 0 0 auto;
+  padding: 25px 8%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.landing-page .img {
-  position: relative;
-  width: 24px;
-  height: 25.72px;
-}
-
-.landing-page .text-wrapper {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 600;
-  color: #1572d3;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-  white-space: nowrap;
-}
-
-.landing-page .navbar {
-  display: inline-flex;
+.logo {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
-  position: relative;
-  flex: 0 0 auto;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+  letter-spacing: 1px;
 }
 
-.landing-page .text-wrapper-2 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
+.logo img {
+  height: 28px;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-gray);
   font-weight: 500;
-  color: #484848;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-  white-space: nowrap;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
-.landing-page .frame-2 {
-  display: inline-flex;
+.nav-links a:hover {
+  color: var(--primary-blue);
+}
+
+.auth-buttons {
+  display: flex;
   align-items: center;
-  gap: 24px;
-  position: relative;
-  flex: 0 0 auto;
+  gap: 25px;
 }
 
-.landing-page .text-wrapper-3 {
-  color: #484848;
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
+.btn-login {
+  text-decoration: none;
+  color: var(--text-gray);
   font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-  white-space: nowrap;
+  font-size: 0.95rem;
 }
 
-.landing-page .div-wrapper {
-  display: inline-flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px 32px;
-  flex: 0 0 auto;
-  background-color: #1572d3;
+.btn-register {
+  text-decoration: none;
+  background-color: var(--primary-blue);
+  color: #FFFFFF;
+  padding: 12px 28px;
   border-radius: 8px;
-  align-items: center;
-  position: relative;
-}
-
-.landing-page .text-wrapper-4 {
-  margin-top: -1px;
-  color: #ffffff;
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
   font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-  white-space: nowrap;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
 }
 
-.landing-page .frame-3 {
-  position: absolute;
-  top: calc(50.00% - 400px);
-  left: 866px;
-  width: 574px;
-  height: 800px;
+.btn-register:hover {
+  background-color: var(--primary-hover);
 }
 
-.landing-page .car {
-  position: absolute;
-  top: 182px;
-  left: 649px;
-  width: 791px;
-  height: 537px;
+/* 2. SECCIÓN PRINCIPAL (HERO) */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Dos columnas: texto izq, auto der */
+  align-items: center;
+  padding: 40px 0 40px 8%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.landing-page .group {
-  position: absolute;
-  top: 240px;
-  left: 160px;
-  width: 390px;
-  height: 239px;
+.hero-content {
+  padding-right: 20px;
 }
 
-.landing-page .frame-4 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 40px;
+.hero-content h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+/* Palabra "Easily" y su subrayado */
+.highlight {
+  color: var(--primary-blue);
+  position: relative;
+  display: inline-block;
+}
+.underline-vector {
   position: absolute;
-  top: 0;
   left: 0;
+  bottom: -10px;       /* Ajusta qué tan pegado o separado queda del texto */
+  width: 100%;         /* Hace que mida exactamente el ancho de la palabra "Easily" */
+  height: auto;
+  pointer-events: none;
 }
 
-.landing-page .find-book-and-rent-a {
+/* Posiciona tu imagen Vector 1.png justo debajo de "Easily" */
+.hero-content a img[src*="Vector 1"] {
   position: relative;
-  width: 390px;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 600;
-  color: transparent;
-  font-size: 48px;
-  letter-spacing: 0;
-  line-height: 48px;
+  top: -15px;
+  left: 230px; /* Ajusta este valor según el tamaño de tu pantalla */
+  width: 140px;
+  pointer-events: none;
 }
 
-.landing-page .span {
-  color: #242424;
+.hero-content p {
+  color: var(--text-gray);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  max-width: 420px;
 }
 
-.landing-page .text-wrapper-5 {
-  color: #1572d3;
+.app-stores {
+  display: flex;
+  gap: 15px;
 }
 
-.landing-page .p {
+.app-stores img {
+  height: 45px;
+  transition: transform 0.2s ease;
+}
+
+.app-stores img:hover {
+  transform: translateY(-2px);
+}
+
+/* Columna Derecha: Imagen del auto */
+.hero-image {
   position: relative;
-  width: 390px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #272727;
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: 27px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.landing-page .frame-5 {
-  gap: 11.51px;
-  display: inline-flex;
-  align-items: flex-start;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .image {
-  position: relative;
-  width: 123.75px;
-  height: 36.62px;
-}
-
-.landing-page .vector {
+/* Contenedor de Fondo 1.png */
+.bg-image {
   position: absolute;
-  top: 74px;
-  left: 246px;
-  width: 134px;
-  height: 48px;
+  top: -120px;   /* Sube o baja la imagen de fondo */
+  right: 0;      /* La pega al borde derecho de la pantalla */
+  z-index: -1;   /* La manda detrás del auto y del menú */
+  pointer-events: none; /* Evita que interfiera con los clics del menú */
 }
 
-.landing-page .frame-6 {
+.bg-image img {
+  width: 650px;  /* Ajusta el tamaño del fondo si lo ves muy grande o chico */
+  height: auto;
+}
+
+
+/* 3. BARRA INFERIOR (Tu imagen Frame 2.png) */
+.hero-barra {
+  grid-column: 1 / -1; /* Hace que ocupe todo el ancho debajo de ambas columnas */
   display: flex;
-  width: 1120px;
-  align-items: center;
-  gap: 50px;
-  padding: 12px 12px 12px 32px;
-  position: absolute;
-  top: 680px;
-  left: 160px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0px 6px 12px #125dac1f;
-}
-
-.landing-page .frame-7 {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-}
-
-.landing-page .vuesax-linear {
-  position: relative;
-  width: 32px;
-  height: 32px;
-}
-
-.landing-page .frame-8 {
-  display: flex;
-  flex-direction: column;
-  width: 278px;
-  height: 37px;
-  align-items: flex-start;
-  gap: 12px;
-  position: relative;
-  margin-right: -70.33px;
-}
-
-.landing-page .text-wrapper-6 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #3d3d3d;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-  white-space: nowrap;
-}
-
-.landing-page .text-wrapper-7 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #b5b5b5;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 21px;
-  white-space: nowrap;
-}
-
-.landing-page .frame-9 {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 0px 0px 0px 24px;
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-  border-left-width: 1px;
-  border-left-style: solid;
-  border-color: #acacac;
-}
-
-.landing-page .frame-10 {
-  display: flex;
-  flex-direction: column;
-  width: 183px;
-  height: 37px;
-  align-items: flex-start;
-  gap: 12px;
-  position: relative;
-}
-
-.landing-page .frame-11 {
-  display: flex;
-  height: 37px;
-  align-items: center;
-  gap: 16px;
-  padding: 0px 0px 0px 24px;
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-  border-left-width: 1px;
-  border-left-style: solid;
-  border-color: #acacac;
-}
-
-.landing-page .frame-12 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-13 {
-  display: flex;
-  width: 159px;
-  height: 48px;
-  align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 8px;
-  position: relative;
-  background-color: #1572d3;
+  margin-top: 30px;
+  padding-right: 8%; /* Compensa el padding izquierdo del hero-section */
+}
+
+.hero-barra img {
+  width: 100%;
+  max-width: 1050px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra flotante */
+}
+
+/*DIVISION*/
+.how-it-work {
+  padding: 80px 0 60px;
+  text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Etiqueta superior azul claro */
+.section-header .badge {
+  display: inline-block;
+  background-color: rgba(21, 114, 211, 0.1);
+  color: var(--primary-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 24px;
   border-radius: 8px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
 }
 
-.landing-page .text-wrapper-8 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-  white-space: nowrap;
+.section-header h2 {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 65px;
 }
 
-.landing-page .div-2 {
-  position: relative;
-  width: 1440px;
-  height: 800px;
-  background-color: #ffffff;
-  overflow: hidden;
-}
-
-.landing-page .frame-14 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 160px;
-  position: relative;
-  top: calc(50.00% - 314px);
-  left: calc(50.00% - 820px);
-}
-
-.landing-page .frame-15 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
+/* Contenedor de las 3 tarjetas */
+.steps-container {
+  display: flex;
   justify-content: center;
   gap: 80px;
-  position: relative;
-  flex: 0 0 auto;
+  padding: 0 8%;
+  margin-bottom: 110px;
+  flex-wrap: wrap;
 }
 
-.landing-page .frame-16 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  position: relative;
-  flex: 0 0 auto;
-}
-.landing-page .frame-17 {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 8px;
-  padding: 16px 32px;
-  position: relative;
-  flex: 0 0 auto;
-  background-color: #1572d31a;
-  border-radius: 8px;
-}
-
-.landing-page .text-wrapper-9 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #1572d3;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 21px;
-  white-space: nowrap;
-}
-
-.landing-page .text-wrapper-10 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #333333;
-  font-size: 38px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: 49.4px;
-  white-space: nowrap;
-}
-
-.landing-page .frame-18 {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 200px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-19 {
+.step-card {
+  max-width: 240px;
   display: flex;
   flex-direction: column;
-  width: 112px;
-  gap: 40px;
   align-items: center;
-  position: relative;
 }
 
-.landing-page .icon-car {
-  display: flex;
-  flex-direction: column;
-  width: 112px;
-  height: 112px;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: relative;
-  background-color: #ebf5ff;
+/* Caja cuadrada azul claro detrás de cada ícono */
+.step-icon {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(21, 114, 211, 0.08);
   border-radius: 16px;
-}
-
-.landing-page .img-2 {
-  position: relative;
-  width: 48px;
-  height: 48px;
-}
-
-.landing-page .frame-20 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex;
   justify-content: center;
-  gap: 24px;
-  position: relative;
-  flex: 0 0 auto;
-  margin-left: -26.5px;
-  margin-right: -26.5px;
+  align-items: center;
+  margin-bottom: 28px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.landing-page .text-wrapper-11 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
+.step-card:hover .step-icon {
+  transform: translateY(-5px);
+  background-color: rgba(21, 114, 211, 0.15);
+}
+
+.step-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.step-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #000000;
-  font-size: 20px;
-  letter-spacing: 0;
-  line-height: 30px;
-  white-space: nowrap;
+  margin-bottom: 12px;
 }
 
-.landing-page .book-your-car-and-we {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #6d6d6d;
-  font-size: 14px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: 21px;
+.step-card p {
+  font-size: 0.9rem;
+  color: #6D6D6D;
+  line-height: 1.5;
 }
 
-.landing-page .frame-21 {
-  margin-left: -45px;
-  margin-right: -45px;
-  display: inline-flex;
-  flex-direction: column;
+/* Franja inferior de marcas (adaptada para tu imagen única Frame 29.png) */
+.brands-strip {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  position: relative;
-  flex: 0 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
 }
 
-.landing-page .frame-22 {
-  margin-left: -59px;
-  margin-right: -59px;
-  display: inline-flex;
-  flex-direction: column;
+.brands-strip img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.brands-strip img:hover {
+  opacity: 1;
+}
+/* =========================================
+   DIVISION
+   ========================================= */
+.why-choose-us {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* Auto a la izquierda, textos a la derecha */
   align-items: center;
-  justify-content: center;
-  gap: 24px;
+  padding: 100px 8% 100px 0; /* Sin padding izquierdo para que el auto salga desde el borde */
+  max-width: 1440px;
+  margin: 0 auto;
   position: relative;
-  flex: 0 0 auto;
 }
 
-.landing-page .frame-23 {
+/* Columna Izquierda: Imagen del auto y triángulo de fondo */
+why-image {
   position: relative;
-  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
 }
 
-.landing-page .vector-2 {
+/* Tu imagen Vector 3.png detrás del Audi */
+.fondo_2 {
   position: absolute;
-  width: 77.99%;
-  height: 107.37%;
-  top: 12.25%;
-  left: -24.03%;
+  left: 0;
+  bottom: 150px;   /* Sube o baja la figura según necesites */
+  width: 600px;    /* Ajusta el tamaño del triángulo de fondo */
+  height: auto;
+  z-index: -1;     /* La manda detrás del auto */
+  pointer-events: none;
 }
 
-.landing-page .frame-24 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 56px;
-  position: absolute;
-  top: calc(50.00% - 308px);
-  left: 733px;
+.audi-img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;      /* Mantiene el Audi por encima del fondo */
 }
 
-.landing-page .frame-25 {
+.audi-img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* Columna Derecha: Contenido */
+.why-content {
+  padding-left: 40px;
+}
+
+.why-content .badge {
+  display: inline-block;
+  background-color: rgba(21, 114, 211, 0.1);
+  color: var(--primary-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.why-content h2 {
+  font-size: 2.3rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 45px;
+}
+
+/* Lista de los 4 beneficios */
+.features-list {
   display: flex;
   flex-direction: column;
-  width: 576px;
-  align-items: flex-start;
-  justify-content: center;
   gap: 32px;
-  position: relative;
-  flex: 0 0 auto;
 }
 
-.landing-page .text-wrapper-12 {
-  position: relative;
-  align-self: stretch;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #333333;
-  font-size: 38px;
-  letter-spacing: 0;
-  line-height: 49.4px;
-}
-
-.landing-page .frame-26 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 40px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-27 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .img-wrapper {
+.feature-item {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+/* Cuadro azul claro de cada ícono */
+.feature-icon {
   width: 64px;
   height: 64px;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: relative;
-  background-color: #ebf5ff;
+  min-width: 64px; /* Evita que se encoja si el texto es largo */
+  background-color: rgba(21, 114, 211, 0.08);
   border-radius: 16px;
-}
-
-.landing-page .img-3 {
-  position: relative;
-  width: 24px;
-  height: 24px;
-}
-
-.landing-page .frame-28 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: flex;
   justify-content: center;
-  gap: 24px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .text-wrapper-13 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #6d6d6d;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-}
-
-.landing-page .audi {
-  position: absolute;
-  top: 230px;
-  left: 0;
-  width: 632px;
-  height: 359px;
-  object-fit: cover;
-}
-
-.landing-page .popular-rental-deals {
-  position: relative;
-  width: 1440px;
-  height: 840px;
-  background-color: #ffffff;
-}
-
-.landing-page .frame-29 {
-  display: inline-flex;
-  flex-direction: column;
   align-items: center;
-  gap: 64px;
-  position: relative;
-  top: calc(50.00% - 336px);
-  left: 160px;
 }
 
-.landing-page .frame-30 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  position: relative;
-  flex: 0 0 auto;
+.feature-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
-.landing-page .text-wrapper-14 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #333333;
-  font-size: 38px;
-  letter-spacing: 0;
-  line-height: 49.4px;
-  white-space: nowrap;
-}
-
-.landing-page .frame-31 {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 32px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .group-2 {
-  position: relative;
-  width: 256px;
-  height: 405px;
-  box-shadow: 0px 12px 24px #0f4c8b29;
-}
-
-.landing-page .frame-32 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #ffffff;
-  border-radius: 16px;
-}
-
-.landing-page .rectangle {
-  position: relative;
-  width: 256px;
-  height: 155px;
-  background-color: #ffffff;
-  border-radius: 16px 16px 0px 0px;
-}
-
-.landing-page .frame-33 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 0px 24px 24px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-34 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  position: relative;
-}
-.landing-page .text-wrapper-15 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #262626;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 17px;
-  white-space: nowrap;
-}
-
-.landing-page .frame-35 {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .star {
-  position: relative;
-  width: 14.07px;
-  height: 13.43px;
-}
-
-.landing-page .element-reviews {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: transparent;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 17px;
-  white-space: nowrap;
-}
-
-.landing-page .text-wrapper-16 {
-  font-weight: 500;
-  color: #000000;
-}
-
-.landing-page .text-wrapper-17 {
-  color: #000000;
-}
-
-.landing-page .text-wrapper-18 {
-  color: #7f7f7f;
-}
-
-.landing-page .frame-36 {
-  display: flex;
-  flex-direction: column;
-  width: 208px;
-  align-items: flex-start;
-  gap: 8px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-37 {
-  display: flex;
-  align-items: center;
-  gap: 41px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-38 {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .img-4 {
-  position: relative;
-  width: 20px;
-  height: 20px;
-}
-
-.landing-page .text-wrapper-19 {
-  width: fit-content;
-  color: #949494;
-  font-size: 12px;
-  line-height: 17px;
-  white-space: nowrap;
-  position: relative;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-.landing-page .frame-39 {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-40 {
-  display: flex;
-  align-items: flex-start;
-  gap: 19px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-41 {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  position: relative;
-  flex: 0 0 auto;
-  margin-right: -2px;
-}
-
-.landing-page .frame-42 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .line {
-  position: relative;
-  width: 208px;
-  height: 1px;
-  margin-top: -1px;
-}
-
-.landing-page .frame-43 {
-  display: flex;
-  width: 208px;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .text-wrapper-20 {
-  position: relative;
-  width: fit-content;
-  margin-top: -0.5px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #595959;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 17px;
-  white-space: nowrap;
-}
-
-.landing-page .element-day {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: transparent;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 17px;
-  white-space: nowrap;
-}
-
-.landing-page .text-wrapper-21 {
+.feature-text h3 {
+  font-size: 1.15rem;
   font-weight: 600;
-  color: #292929;
+  color: #000000;
+  margin-bottom: 6px;
 }
 
-.landing-page .text-wrapper-22 {
-  color: #9c9c9c;
-  font-size: 14px;
+.feature-text p {
+  font-size: 0.92rem;
+  color: #6D6D6D;
+  line-height: 1.5;
+  max-width: 360px;
+}
+/*DIVISION*/
+.popular-deals {
+  padding: 80px 8%;
+  text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.landing-page .frame-44 {
+/* Contenedor centrado para tu imagen única Frame 3.png */
+.deals-grid {
   display: flex;
-  width: 208px;
-  height: 40px;
-  align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 8px;
-  position: relative;
-  background-color: #1572d3;
-  border-radius: 8px;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
-.landing-page .text-wrapper-23 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 17px;
-  white-space: nowrap;
+.deal-card-img {
+  display: block;
+  width: 100%;
+  max-width: 1150px; /* Controla el ancho máximo para que no se desborde */
 }
 
-.landing-page .image-2 {
-  position: absolute;
-  top: 26px;
-  left: 24px;
-  width: 208px;
-  height: 104px;
+.deal-card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-.landing-page .frame-45 {
+/* Botón inferior "Show all vehicles" */
+.deals-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-show-all {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  position: relative;
-  flex: 0 0 auto;
-  margin-right: -1px;
-}
-
-.landing-page .audi-2 {
-  position: absolute;
-  top: 36px;
-  left: 24px;
-  width: 209px;
-  height: 91px;
-}
-
-.landing-page .image-3 {
-  position: absolute;
-  top: 31px;
-  left: 24px;
-  width: 208px;
-  height: 97px;
-}
-
-.landing-page .image-4 {
-  position: absolute;
-  top: 38px;
-  left: 24px;
-  width: 208px;
-  height: 85px;
-}
-.landing-page .frame-46 {
-  display: flex;
-  width: 216px;
-  height: 48px;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px;
-  position: relative;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-gray);
+  border: 1px solid #E0E0E0;
+  padding: 14px 32px;
   border-radius: 8px;
-  border: 1px solid;
-  border-color: #e0e0e0;
-}
-
-.landing-page .text-wrapper-24 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
+  font-size: 0.95rem;
   font-weight: 500;
-  color: #4d4d4d;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 18.2px;
-  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
-.landing-page .what-people-say {
+.btn-show-all:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+/*DIVISION*/
+
+/* =========================================
+   6. SECCIÓN: TESTIMONIALS
+   ========================================= */
+.testimonials {
+  padding: 100px 0 110px;
+  text-align: center;
+  background-color: #F7FBFF; /* Fondo celeste muy claro de la sección */
   position: relative;
-  width: 1440px;
-  height: 864px;
-  background-color: #f7fbff;
   overflow: hidden;
 }
 
-.landing-page .image-5 {
-  position: absolute;
-  top: 90px;
-  left: 137px;
-  width: 292px;
-  height: 310px;
+/* Asegura que el título quede encima de las comillas */
+.testimonials .section-header {
+  position: relative;
+  z-index: 2;
 }
 
-.landing-page .image-6 {
+/* Estilo base para las comillas de fondo */
+.quote-bg {
   position: absolute;
-  top: -70px;
-  left: 1055px;
-  width: 279px;
-  height: 297px;
+  z-index: 1;          /* Detrás de las tarjetas y el título, pero encima del fondo celeste */
+  pointer-events: none;
 }
 
-.landing-page .frame-47 {
-  display: inline-flex;
-  flex-direction: column;
+/* Comilla izquierda: ubicada cerca del borde izquierdo de la tarjeta central */
+.quote-left {
+  width: 240px;
+  top: 75px;
+  left: 9%;
+}
+
+/* Comilla derecha: pegada arriba a la derecha */
+.quote-right {
+  width: 260px;
+  top: -15px;
+  right: 6%;
+}
+
+/* Contenedor de tu imagen única de reseñas de borde a borde */
+.testimonials-strip {
+  position: relative;
+  z-index: 2;          /* Mantiene las tarjetas por delante de la comilla izquierda */
+  width: 100%;
+  margin-top: 10px;
+}
+
+.testimonials-strip img {
+  width: 100%;         /* Ocupa todo el ancho de la ventana sin márgenes laterales */
+  height: auto;
+  display: block;
+}
+
+.download-app {
+  background-color: var(--bg-light);
+  width: 100%;
+  overflow: hidden; /* Corta la parte inferior del teléfono y el triángulo limpio */
+  position: relative;
+}
+
+.download-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 90px 8% 0; /* 0 abajo para que el celular quede pegado al borde inferior */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 80px;
+  position: relative;
+}
+
+/* Triángulo celeste de fondo detrás del texto izquierdo */
+.download-bg-shape {
   position: absolute;
-  top: calc(50.00% - 305px);
-  left: calc(50.00% - 1231px);
-}
-
-.landing-page .frame-48 {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 40px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-49 {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  flex: 0 0 auto;
-  background-color: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0px 12px 24px #0f4c8b29;
-}
-
-.landing-page .rectangle-2 {
-  position: relative;
-  width: 397px;
-  height: 438px;
-  object-fit: cover;
-}
-
-.landing-page .frame-50 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 48px;
-  padding: 40px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .element-stars {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: transparent;
-  font-size: 64px;
-  letter-spacing: 0;
-  line-height: 96px;
-  white-space: nowrap;
-}
-
-.landing-page .text-wrapper-25 {
-  color: #383838;
-}
-
-.landing-page .text-wrapper-26 {
-  color: #383838;
-  font-size: 24px;
-  line-height: 36px;
-}
-
-.landing-page .frame-51 {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 4px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .star-2 {
-  position: relative;
-  width: 4.55px;
-  height: 20.14px;
-}
-
-.landing-page .star-3 {
-  position: relative;
-  width: 21.1px;
-  height: 20.14px;
-}
-
-.landing-page .frame-52 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 80px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .text-wrapper-27 {
-  position: relative;
-  width: 317px;
-  height: 94px;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #282828;
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: 27px;
-}
-
-.landing-page .text-wrapper-28 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #252525;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: 36px;
-  white-space: nowrap;
-}
-
-.landing-page .text-wrapper-29 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #828282;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 21px;
-  white-space: nowrap;
-}
-
-.landing-page .i-feel-very-secure {
-  position: relative;
-  width: 317px;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #282828;
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: 27px;
-}
-
-.landing-page .rectangle-3 {
-  position: relative;
-  width: 397px;
-  height: 438px;
-}
-
-.landing-page .element-stars-2 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #252525;
-  font-size: 64px;
-  letter-spacing: 0;
-  line-height: 96px;
-  white-space: nowrap;
-}
-
-.landing-page .text-wrapper-30 {
-  font-family: "Poppins", Helvetica;
-  font-weight: 500;
-  color: #252525;
-  font-size: 64px;
-  letter-spacing: 0;
-  line-height: 96px;
-}
-
-.landing-page .text-wrapper-31 {
-  font-size: 24px;
-  line-height: 36px;
-}
-
-.landing-page .text-wrapper-32 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #282828;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 21px;
-  white-space: nowrap;
-}
-
-.landing-page .download-app {
-  position: relative;
-  width: 1440px;
-  height: 500px;
-  background-color: #ffffff;
-  overflow: hidden;
-}
-.landing-page .vector-3 {
-  position: absolute;
-  width: 62.01%;
-  height: 136.80%;
-  top: -18.60%;
-  left: -16.94%;
-}
-
-.landing-page .find-a-lower-price {
-  position: absolute;
-  top: -1328px;
-  left: -881px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #6d6d6d;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-}
-
-.landing-page .frame-53 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 40px;
-  position: absolute;
-  top: calc(50.00% - 150px);
-  left: 160px;
-}
-
-.landing-page .download-rentcars {
-  position: relative;
-  width: 480px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 600;
-  color: transparent;
-  font-size: 48px;
-  letter-spacing: 0;
-  line-height: 57.6px;
-}
-
-.landing-page .text-wrapper-33 {
-  color: #282828;
-}
-
-.landing-page .text-wrapper-34 {
-  color: #1572d3;
-}
-
-.landing-page .text-wrapper-35 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #3d3d3d;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-  white-space: nowrap;
-}
-
-.landing-page .frame-54 {
-  gap: 16.26px;
-  display: inline-flex;
-  align-items: flex-start;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .image-7 {
-  position: relative;
-  width: 174.87px;
-  height: 51.74px;
-}
-
-.landing-page .iphone-pro-space {
-  position: absolute;
-  top: 72px;
-  left: 839px;
-  width: 520px;
-  height: 1054px;
-}
-
-.landing-page .img-5 {
-  top: 0;
   left: 0;
-  width: 520px;
-  height: 428px;
-  position: absolute;
-  object-fit: cover;
+  top: -20px;
+  width: 580px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.landing-page .iphone-pro-space-2 {
-  top: 20px;
-  left: 25px;
-  width: 469px;
-  height: 408px;
-  position: absolute;
-  object-fit: cover;
-}
-
-.landing-page .footer {
+/* Columna Izquierda */
+.download-content {
   position: relative;
-  width: 1440px;
-  height: 375px;
-  background-color: #051c34;
+  z-index: 1;
+  padding-bottom: 90px; /* Centra verticalmente el texto respecto a la altura total */
 }
 
-.landing-page .frame-55 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  position: absolute;
-  top: 48px;
-  left: 544px;
-}
-
-.landing-page .text-wrapper-36 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #d5d5d5;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 21px;
-  white-space: nowrap;
-}
-
-.landing-page .text-wrapper-37 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #d5d5d5;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 21px;
-  white-space: nowrap;
-}
-
-.landing-page .frame-56 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  position: absolute;
-  top: 48px;
-  left: 736px;
-}
-
-.landing-page .frame-57 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  position: absolute;
-  top: 48px;
-  left: 928px;
-}
-
-.landing-page .frame-58 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  position: absolute;
-  top: 48px;
-  left: 1120px;
-}
-
-.landing-page .frame-59 {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.landing-page .frame-60 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 32px;
-  position: absolute;
-  top: 41px;
-  left: 160px;
-}
-
-.landing-page .text-wrapper-38 {
-  position: relative;
-  width: fit-content;
-  font-family: "Poppins", Helvetica;
+.download-content .badge {
+  display: inline-block;
+  background-color: rgba(21, 114, 211, 0.1);
+  color: var(--primary-blue);
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-  white-space: nowrap;
+  padding: 10px 24px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
 }
 
-.landing-page .text-wrapper-39 {
-  width: 159px;
-  margin-top: -1px;
-  color: #d5d5d5;
-  font-size: 14px;
-  line-height: 21px;
+.download-content h2 {
+  font-size: 2.8rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+  max-width: 480px;
+}
+
+.download-content .text-blue {
+  color: var(--primary-blue);
+}
+
+.download-content p {
+  color: var(--text-gray);
+  font-size: 1rem;
+  margin-bottom: 35px;
+}
+
+/* Columna Derecha: Celular pegado al borde inferior */
+.download-phone {
   position: relative;
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  letter-spacing: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.landing-page .text-wrapper-40 {
-  position: absolute;
-  top: 327px;
-  left: calc(50.00% - 560px);
-  font-family: "Poppins", Helvetica;
-  font-weight: 400;
-  color: #d5d5d5;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 18px;
-  white-space: nowrap;
+.download-phone img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block; /* Elimina el espacio fantasma debajo de las imágenes */
+}
+.main-footer {
+  width: 100%;
+  background-color: #051C34; /* Mismo azul oscuro de la imagen por si el monitor es ultrawide */
+  margin: 0;
+  padding: 0;
+  line-height: 0; /* Evita cualquier franja blanca debajo de la imagen */
 }
 
-.landing-page .line-2 {
-  position: absolute;
-  top: 294px;
-  left: calc(50.00% - 560px);
-  width: 1120px;
-  height: 1px;
+.main-footer img {
+  width: 100%;
+  height: auto;
+  display: block; /* Elimina el espacio inferior por defecto de las etiquetas img */
 }
