@@ -1,3 +1,4 @@
+/*LANDING PAGE*/
 :root {
   --primary-blue: #1572D3;
   --primary-hover: #0f5bb0;
@@ -90,7 +91,6 @@ body {
   background-color: var(--primary-hover);
 }
 
-/* 2. SECCIÓN PRINCIPAL (HERO) */
 .hero-section {
   display: grid;
   grid-template-columns: 1fr 1.2fr; /* Dos columnas: texto izq, auto der */
@@ -199,7 +199,7 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra flotante */
 }
 
-/*DIVISION*/
+/*EXPLICACION*/
 .how-it-work {
   padding: 80px 0 60px;
   text-align: center;
@@ -302,9 +302,7 @@ body {
 .brands-strip img:hover {
   opacity: 1;
 }
-/* =========================================
-   DIVISION
-   ========================================= */
+/*DESCRIPCION*/
 .why-choose-us {
   display: grid;
   grid-template-columns: 1.1fr 1fr; /* Auto a la izquierda, textos a la derecha */
@@ -420,7 +418,7 @@ why-image {
   line-height: 1.5;
   max-width: 360px;
 }
-/*DIVISION*/
+/*RENTAS POPULARES*/
 .popular-deals {
   padding: 80px 8%;
   text-align: center;
@@ -473,11 +471,9 @@ why-image {
   border-color: var(--primary-blue);
   color: var(--primary-blue);
 }
-/*DIVISION*/
 
-/* =========================================
-   6. SECCIÓN: TESTIMONIALS
-   ========================================= */
+/*RESEÑAS*/
+
 .testimonials {
   padding: 100px 0 110px;
   text-align: center;
@@ -554,7 +550,7 @@ why-image {
   z-index: 0;
   pointer-events: none;
 }
-
+/*ULTIMA PARTE*/
 /* Columna Izquierda */
 .download-content {
   position: relative;
@@ -608,6 +604,7 @@ why-image {
   height: auto;
   display: block; /* Elimina el espacio fantasma debajo de las imágenes */
 }
+/*Footer*/
 .main-footer {
   width: 100%;
   background-color: #051C34; /* Mismo azul oscuro de la imagen por si el monitor es ultrawide */
